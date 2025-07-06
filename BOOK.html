@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NIOS Table with Action Buttons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #fff3c6; }
+    .top-bar {
+      background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+    }
+    .logo-title {
+      display: flex; align-items: center; gap: 15px;
+    }
+    .logo-title img {
+      width: 70px; height: 70px; border-radius: 50%; background: #fff; object-fit: cover;
+    }
+    .logo-title-text {
+      color: #fff; font-size: 2.2rem; font-weight: bold; line-height: 1.1; letter-spacing: 1px;
+    }
+    .top-icons {
+      display: flex; align-items: center; gap: 35px;
+    }
+    .top-icon {
+      width: 48px; height: 48px; background: #fff; border-radius: 50%; border: 3px solid #222;
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    }
+    .top-icon svg { width: 28px; height: 28px; }
+    .menu-bar { background: #ffcc66; }
+    .menu-list {
+      display: flex; align-items: center; list-style: none; margin: 0; padding: 0; flex-wrap: wrap;
+    }
+    .menu-list li {
+      margin: 0 18px; font-size: 1.25rem; color: #222; font-weight: 600; cursor: pointer;
+      letter-spacing: 0.5px; transition: color 0.2s; white-space: nowrap;
+    }
+    .footer {
+      background: #222;
+      color: #fff;
+      padding: 32px 0 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    .footer h5 {
+      color: #ffcc66;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .footer a {
+      color: #ffcc66;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 991.98px) {
+      .logo-title-text { font-size: 1.5rem; }
+      .logo-title img { width: 55px; height: 55px; }
+      .top-icon { width: 40px; height: 40px; }
+      .top-icon svg { width: 22px; height: 22px; }
+      .hero-text { font-size: 1.4rem; }
+    }
+    @media (max-width: 767.98px) {
+      .logo-title-text { font-size: 1.1rem; }
+      .logo-title img { width: 40px; height: 40px; }
+      .top-icon { width: 35px; height: 35px; }
+      .top-icon svg { width: 20px; height: 20px; }
+      .apply-section, .documents-section { padding: 12px 2vw 10px 2vw; }
+      .hero-img { min-height: 120px; }
+      .hero-text { font-size: 1.05rem; }
+    }
+    .menu-list li:hover { color: #ff512f; }
+    .menu-btn {
+      border-radius: 22px; font-size: 1.1rem; font-weight: bold; margin-left: 12px; padding: 8px 22px;
+      border: none; outline: 2px solid #222; background: #ff512f; color: #fff;
+      transition: background 0.2s, color 0.2s;
+    }
+    .menu-btn.subjects { background: #f09819; color: #222; }
+    @media (max-width: 991.98px) {
+      .logo-title-text { font-size: 1.5rem; }
+      .logo-title img { width: 55px; height: 55px; }
+      .top-icon { width: 40px; height: 40px; }
+      .top-icon svg { width: 22px; height: 22px; }
+    }
+    @media (max-width: 767.98px) {
+      .logo-title-text { font-size: 1.2rem; }
+      .logo-title img { width: 40px; height: 40px; }
+      .top-icon { width: 35px; height: 35px; }
+      .top-icon svg { width: 20px; height: 20px; }
+      .menu-list { flex-direction: column; align-items: center; width: 100%; }
+      .menu-list li { width: 100%; text-align: center; margin: 5px 0; }
+      .menu-btn { font-size: 0.9rem; padding: 6px 15px; margin: 4px 5px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="container-fluid top-bar">
+    <div class="row align-items-center py-1">
+      <div class="col-12 col-lg-8">
+        <div class="logo-title ms-2 my-1">
+          <img src="IMG/logo.png" alt="Best Education Logo">
+          <div class="logo-title-text">
+            BEST EDUCATION<br>NIOS HUB
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex justify-content-lg-end justify-content-center mt-2 mt-lg-0 pe-lg-4">
+        <div class="top-icons">
+          <a href="tel:+918903591984" class="top-icon" title="Call +91 8903591984">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5A1 1 0 013 3.5h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:sumathynl.maths@gmail.com" class="top-icon" title="Email sumathynl.maths@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#222" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/918903591984" class="top-icon" title="WhatsApp +91 8903591984" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#222" stroke-width="2"/><path d="M17 15.5a6.5 6.5 0 01-10-7.5l1.5 1.5a4.5 4.5 0 006 6l1.5 1.5z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Menu Bar -->
+  <div class="container-fluid menu-bar">
+    <div class="row align-items-center">
+      <div class="col-12 d-flex flex-wrap align-items-center justify-content-between py-2">
+        <ul class="menu-list flex-grow-1 mb-0 ps-2">
+          <li><a href="index.html" style="text-decoration:none; color:inherit;">HOME</a></li>
+          <li><a href="aboutus.html" style="text-decoration:none; color:inherit;">ABOUT US</a></li>
+          <li><a href="book.html" style="text-decoration:none; color:inherit;">NIOS BOOKS</a></li>
+          <li><a href="tma.html" style="text-decoration:none; color:inherit;">NIOS TMA</a></li>
+          <li><a href="pyqs.html" style="text-decoration:none; color:inherit;">PYQs</a></li>
+          <li><a href="faqs.html" style="text-decoration:none; color:inherit;">FAQs</a></li>
+          <li><a href="contact.html" style="text-decoration:none; color:inherit;">CONTACT US</a></li>
+        </ul>
+        <div class="d-flex flex-wrap ms-auto pe-2">
+          <button class="menu-btn">REACH US</button>
+          <button class="menu-btn subjects">OUR SUBJECTS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Table with Action Buttons -->
+  <div class="container my-5">
+    <h3 class="mb-4 text-center">NIOS Resource Table</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle shadow-sm">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Document Name</th>
+            <th>Type</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Secondary ENGLISH</td>
+            <td>PDFs</td>
+            <td>
+                <a>Secondary ENGLISH</a>
+                <a title="pdf" href="https://nios.ac.in/media/documents/Secengcour/book1/202_first_page.pdf"  >First page</a> </br> </br> 
+  
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_1.pdf"  >Snake Bite (138 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_2.pdf"  >How the Squirrel Got Its Stripes (148 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_3.pdf"  >Kondiba-A Hero (256 KB)  </a> </br> </br> <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_4.pdf"  >Tall Trees (150 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_5.pdf"  >A Tiger Comes to Town-I (289 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_6.pdf"  >A Tiger Comes to Town-II (366 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_7.pdf"  >The Shoeshine (185 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_8.pdf"  >A Birthday Letter (162 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_9.pdf"  >Nine Gold Medals (265 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_10.pdf"  >Noise: How It Affects Our Lives (190 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_11.pdf"  >My Elder Brother (192 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_12.pdf"  >Indian Weavers (152 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_13.pdf"  >The Last Stone Mason (206 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book1/L_14.pdf"  >Stealing and Atonement (130 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_15.pdf"  >My Vision for India (155 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_16.pdf"  >My Only Cry (349 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_17.pdf"  >Caring for Others (181 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_18.pdf"  >The Little Girl (208 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_19.pdf"  >A Prayer for Healing (224 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_20.pdf"  >New Good Things from Rubbish (227 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_21.pdf"  >The Village Pharmacy (217 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_22.pdf"  >The Truth (110 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_23.pdf"  >The Return of the Lion (One Act Play) (111 KB)  </a> </br> </br> 
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_24.pdf"  >Co-operate and Prosper (373 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_25.pdf"  >Once Upon a Time (122 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_26.pdf"  >Ustad Bismillah Khan (316 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/book2/L_27.pdf"  >The Parrot Who Wouldn&#8217;t Talk (806 KB)  </a> </br> </br>
+  <a href="https://nios.ac.in/media/documents/Secengcour/Sample%20question%20paper.pdf"  >Sample Question Paper (46 KB)  </a> </br> </br>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Secondary ARABIC</td>
+            <td>PDFs</td>
+            <td>
+                <a>Secondary ARABIC</a>
+                <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-1.pdf">Lesson 1</a></p>
+    <p><a href="https://nios.ac.in/media/documents/235-Arabic/lesson-2.pdf">Lesson 2</a></p>
+    <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-3.pdf">Lesson 3</a></p>
+    <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-4.pdf">Lesson 4</a></p>
+    <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-5.pdf">Lesson 5</a></p>
+    <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-6.pdf">Lesson 6</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-7.pdf">Lesson 7</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-8.pdf">Lesson 8</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-9.pdf">Lesson 9</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-10.pdf">Lesson 10</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-11.pdf">Lesson 11</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-12.pdf">Lesson 12</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-13.pdf">Lesson 13</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-14.pdf">Lesson 14</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-15.pdf">Lesson 15</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-16.pdf">Lesson 16</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-17.pdf">Lesson 17</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-18.pdf" >Lesson 18</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-19.pdf" >Lesson 19</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-20.pdf" >Lesson 20</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-21.pdf" >Lesson 21</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-22.pdf" >Lesson 22</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-23.pdf" >Lesson 23</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-24.pdf" >Lesson 24</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-25.pdf" >Lesson 25</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-26.pdf" >Lesson 26</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-27.pdf" >Lesson 27</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-28.pdf" >Lesson 28</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-29.pdf" >Lesson 29</a></p>
+     <p><a title="pdf" href="https://nios.ac.in/media/documents/235-Arabic/lesson-30.pdf" >Lesson 30</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Secondary HINDI</td>
+            <td>PDF</td>
+            <td>
+                <a>Secondary ARABIC</a>
+                <p><a title="pdf" href="https://nios.ac.in/media/documents/sechincour/201_first_page.pdf" >प्रथम पृष्ठ</a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-1.pdf" >बहादुर (कहानी) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-2.pdf" >दोहे (कविता) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-3.pdf" >गिल्लू (रेखाचित्र) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-4.pdf" >आहवान (कविता) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-5.pdf" >राबर्ट नर्सिंग होम मैं (रेपोतार्ज) (111 MB)</a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-6.pdf" >भारत की ये बहादुर बेटियाँ (फीचर) (111 MB)</a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-7.pdf" >आजादी (कविता) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-8.pdf" >चन्द्रगहना से लौटती बेर (कविता) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-9.pdf" >अख़बार की दुनिया (गद्य) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-10.pdf" >पढ़ें कैसे (गद्य) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-11.pdf" >सार कैसे लिखें (लेखन) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-12.pdf" >इसे जगाओ (कविता) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-13.pdf" >सुखी राजकुमार (कहानी) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-14.pdf" >बूढ़ी पृथ्वी का दुख (कविता) (111 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-15.pdf" >अँधेर नगरी (नाटक) (27.5 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-16.pdf" >अपना पराया (वैज्ञानिक) (27.6 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-17.pdf" >बीती विभावरी जाग री (कविता) (27.6 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-18.pdf" >नाखून क्यों बढ़ते हैं (ललित निबंध) (27.6 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-19.pdf" >शतरंज के खिलाडी (कहानी) (27.6 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-20.pdf" >उनको प्रणाम (कविता) (27.6 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-21.pdf" >पत्र कैसे लिखें (लेखन) (27.6 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/sechincour/Chapter-22.pdf" >निबंध कैसे लिखें (लेखन) (27.6 MB)  </a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Secondary MATHS</td>
+            <td>Link</td>
+            <td>
+              <a>Secondary MATHS</a>
+              <h4><strong>MODULE I: ALGEBRA</strong></h4>
+    <p><a title="pdf" href="https://nios.ac.in/media/documents/SecMathcour/Eng/211_first_page.pdf"  >First Page</a></p>
+    <p>1. <a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-1.pdf"  >Chapter 1. Number Systems (2 MB)</a></p>
+    <p>2. <a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-2.pdf"  >Chapter 2. Exponents and Radicals (2.5 MB)   </a>
+        3. <a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-3.pdf"  >Chapter 3. Algebraic Expressions and Polynomials (2.5 MB)  </a></p>
+    <p>4. <a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-4.pdf"  >Chapter 4. Special Products and Factorization (2.5 MB)  </a></p>
+    <p>5. <a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-5.pdf"  >Chapter 5. Linear Equations (2.5 MB)  </a></p>
+    <p>6. <a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-6.pdf"  >Chapter 6. Quadratic Equations (2.5 MB)  </a></p>
+    <p>7. <a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-7.pdf"  >Chapter 7. Arithmetic Progressions (2.5 MB)  </a></p>
+    <h4><strong>MODULE II: COMMERCIAL MATHEMATICS</strong></h4>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-8.pdf"  >Chapter 8. Percentage and its Applications (2.5 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-9.pdf"  >Chapter 9. Instalment Buying (3 MB)</a></p>
+    <h4><strong>MODULE III: GEOMETRY</strong>
+    </h4>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-10.pdf"  >Chapter 10. Lines and Angles (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-11.pdf"  >Chapter 11. Congruence of Triangles (17 MB)   </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-12.pdf"  >Chapter 12. Concurrent Lines (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-13.pdf"  >Chapter 13. Quadrilaterals (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-14.pdf"  >Chapter 14. Similarity of Triangles (17 MB)   </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-15.pdf"  >Chapter 15. Circles (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-16.pdf"  >Chapter 16. Angles in a Circle and Cyclic Quadrilateral (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-17.pdf"  >Chapter 17. Secants, Tangents and their Properties (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-18.pdf"  >Chapter 18. Constructions (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-19.pdf"  >Chapter 19. Co-ordinate Geometry (17 MB)  </a></p>
+    <h4><strong>MODULE IV: MENSURATION</strong></h4>
+    <p><br /><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-20.pdf"  >Chapter 20. Perimeters and Area of Plane Figures (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-21.pdf"  >Chapter 21. Surface Area and Volume of Solid Figures (17 MB)   </a></p>
+    <h4><strong>MODULE V: TRIGNOMETRY</strong></h4>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-22.pdf"  >Chapter 22. Introduction to Trigonometry (17 MB)  </a></p>
+    <p><br /><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-23.pdf"  >Chapter 23. Trigonometric Ratios of Some Special Angles (17 MB)  </a></p>
+    <h4><strong>MODULE VI: STATISTICS</strong></h4>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-24.pdf"  >Chapter 24. Data and Their Representation (17 MB)   </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-25.pdf"  >Chapter 25. Measures of Central Tendency (17 MB)   </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Chapter-26.pdf"  >Chapter 26. Introduction to Probability (17 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Lab_Manual.pdf"  >Lab Manual (1370 KB)   </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecMathcour/Eng/Question_Paper_Design.pdf"  >Sample Question Paper (17 MB)  </a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Secondary SCIENCE</td>
+            <td>Link</td>
+            <td>
+              <a>Secondary SCIENCE</a>
+              <p><a href="https://nios.ac.in/media/documents/secscicour/English/curriculam.pdf" >Curriculum (41.1 MB)  </a></p>
+    <p><a title="pdf" href="https://nios.ac.in/media/documents/secscicour/English/212_first_page.pdf" >First Page</a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-1.pdf" >1. Measurement in Science and Technology (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-2.pdf" >2. Matter in Our Surroundings (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-3.pdf" >3. Atom and Molecules (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-4.pdf" >4. Chemical Reaction and Equations (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-5.pdf" >5. Atomic Structure (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-6.pdf" >6. Periodic Classification of Elements (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-7.pdf" >7. Chemical Bonding (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-8.pdf" >8. Acids, Bases and Salts (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-9.pdf" >9. Motion and its Description (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-10.pdf" >10. Force and Motion (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-11.pdf" >11. Gravitation (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-12.pdf" >12. Sources of Energy (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-13.pdf" >13. Work and Energy (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-14.pdf" >14. Thermal Energy (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-15.pdf" >15. Light Energy (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-16.pdf" >16. Electrical Energy (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-17.pdf" >17. Magnetic Effect of Electric Current (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-18.pdf" >18. Sound and Communication (41.1 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-19.pdf" >19. Classification of Living Organisms (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-20.pdf" >20. History of Life on Earth (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-21.pdf" >21. Building Blocks of Life &#8211; Cell and Tissues (37.3 MB)</a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-22.pdf" >22. Life Processes &#8211; 1 : Nutrition, Transportation, Respiration and Excretion (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-23.pdf" >23. Life Processes &#8211; 2 : Control and Coordination (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-24.pdf" >24. Life Processes &#8211; 3 : Reproduction (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-25.pdf" >25. Heredity (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-26.pdf" >26. Air and Water (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-27.pdf" >27. Metals and Non-metals (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-28.pdf" >28. Carbon and Its Compounds (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-29.pdf" >29. Natural Environment (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-30.pdf" >30. Human Impact on Environment (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-31.pdf" >31. Food Production (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Chapter-32.pdf" >32. Health and Hygiene (37.3 MB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/secscicour/English/Lab_Manual_Final.pdf" >Lab Manual (10.4 MB)  </a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>SECONDARY SOCIAL SCIENCE</td>
+            <td>Link</td>
+            <td>
+              <a>SECONDARY SOCIAL SCIENCE</a>
+              <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-00.pdf" >INTRODUCTION TO SOCIAL SCIENCE (147 KB) </a></p>
+    <p><a title="pdf" href="https://nios.ac.in/media/documents/SecSocSciCour/English/213_first_page.pdf" >First Page</a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-01.pdf" >ANCIENT WORLD (157 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-02.pdf" >MEDIEVAL WORLD </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-03.pdf" >MODERN WORLD &#8211; I (258 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-04.pdf" >MODERN WORLD &#8211; Ii (389 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-05.pdf" >IMPACT OF BRITISH RULE ON INDIA: ECONOMIC, SOCIAL AND CULTURAL (1757-1857) (389 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-06.pdf" >RELIGIOUS AND SOCIAL AWKENING IN COLONIAL INDIA (398 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-07.pdf" >POPULAR RESISTANCE TO THE BRITISH RULE (298 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-08.pdf" >INDIAN NATIONAL MOVEMENT (254 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-09.pdf" >PHYSIOGRAPHY OF INDIA (354 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-10.pdf" >CLIMATE (218 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-11.pdf" >BIO-DIVERSITY (2151 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-12.pdf" >AGRICULTURE IN INDIA(424 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-13.pdf" >TRANSPORT AND COMMUNICATION(594 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-14.pdf" >POPULATION: OUR GREATEST RESOURCE(600 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-15.pdf" >CONSTITUTIONAL VALUES AND POLITICAL SYSTEM IN INDIA(284 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-16.pdf" >FUNDAMENTAL RIGHTS AND FUNDAMENTAL DUTIES(477 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-17.pdf" >INDIA &#8211; A WELFARE STATE(347 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-18.pdf" >LOCAL GOVERNMENTS AND FIELD ADMINISTRATION(625 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-19.pdf" >GOVERNANCE AT THE STATE LEVEL(468 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-20.pdf" >GOVERNANCE AT THE UNION LEVEL(944 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-21.pdf" >POLITICAL PARTIES AND PRESSURE GROUPS(1562 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-22.pdf" >PEOPLE&#8217;S PARTICIPATION IN THE DEMOCRATIC PROCESS(499 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-23.pdf" >CHALLENGES TO INDIAN DEMOCRACY(5580 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-24.pdf" >NATIONAL INTEGRATION AND SECULARISM(525 KB) </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-25.pdf" >SOCIO-ECONOMIC DEVELOPMENT AND EMPOWERMENT OF DISADVANTAGED GROUPS(825 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-26.pdf" >ENVIRONMENTAL DEGRADATION AND DISASTER MANAGEMENT(426 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Lesson-27.pdf" >PEACE AND SECURITY(526 KB)  </a></p>
+    <p><a href="https://nios.ac.in/media/documents/SecSocSciCour/English/Sample%20Paper.pdf" >Sample Paper(573 KB) </a></p>
+            </td>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About NIOS</h5>
+          <p>At Best Education NIOS Hub, we provide expert guidance and resources to help you succeed. Our team assists with subject selection, exam preparation, and all administrative processes, ensuring a smooth and motivating learning experience.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Course Materials</h5>
+          <ul class="list-unstyled">
+            <li>Secondary Schooling</li>
+            <li>Senior Secondary Schooling</li>
+            <li>Secondary Science</li>
+            <li>Senior Secondary Commerce</li>
+            <li>Senior Secondary Arts</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Contact</h5>
+          <p>Address: No 1 D St.John's College Road ,Tirunelveli ,TamilNadu<br>
+          Email: <a href="mailto:sumathynl.maths@gmail.com">sumathynl.maths@gmail.com</a><br>
+          Phone: +91 8903591984</p>
+        </div>
+      </div>
+      <div class="text-center mt-3" style="font-size:0.95rem;">
+        © 2001 Best Eduaction NIOS Hub | All Rights Reserved | Designed by <a href="niosbest.in" target="_blank">Niosbest.in</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQs | Best Education NIOS Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #fff3c6; }
+    .top-bar {
+      background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+    }
+    .logo-title {
+      display: flex; align-items: center; gap: 15px;
+    }
+    .logo-title img {
+      width: 70px; height: 70px; border-radius: 50%; background: #fff; object-fit: cover;
+    }
+    .logo-title-text {
+      color: #fff; font-size: 2.2rem; font-weight: bold; line-height: 1.1; letter-spacing: 1px;
+    }
+    .top-icons {
+      display: flex; align-items: center; gap: 35px;
+    }
+    .top-icon {
+      width: 48px; height: 48px; background: #fff; border-radius: 50%; border: 3px solid #222;
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    }
+    .top-icon svg { width: 28px; height: 28px; }
+    .menu-bar { background: #ffcc66; }
+    .menu-list {
+      display: flex; align-items: center; list-style: none; margin: 0; padding: 0; flex-wrap: wrap;
+    }
+    .menu-list li {
+      margin: 0 18px; font-size: 1.25rem; color: #222; font-weight: 600; cursor: pointer;
+      letter-spacing: 0.5px; transition: color 0.2s; white-space: nowrap;
+    }
+    .menu-list li:hover { color: #ff512f; }
+    .menu-btn {
+      border-radius: 22px; font-size: 1.1rem; font-weight: bold; margin-left: 12px; padding: 8px 22px;
+      border: none; outline: 2px solid #222; background: #ff512f; color: #fff;
+      transition: background 0.2s, color 0.2s;
+    }
+    .menu-btn.subjects { background: #f09819; color: #222; }
+    .faq-hero {
+      position: relative;
+      width: 100%;
+      min-height: 180px;
+      background: url('img/hero_blog_teaching-strategies_middle-school_photo_alamy_2DHA40H_Maskot.webp') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .faq-hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.18);
+    }
+    .faq-hero-text {
+      position: relative;
+      color: #fff;
+      font-size: 2.3rem;
+      font-weight: bold;
+      z-index: 1;
+      text-align: center;
+      letter-spacing: 2px;
+      padding: 20px;
+    }
+    .faq-section {
+      background: #fff;
+      margin: -40px auto 40px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      padding: 32px 18px 24px 18px;
+    }
+    .faq-section h2 {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin: 0 0 18px 0;
+      color: #222;
+      text-align: center;
+    }
+     .footer {
+      background: #222;
+      color: #fff;
+      padding: 32px 0 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    .footer h5 {
+      color: #ffcc66;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .footer a {
+      color: #ffcc66;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .faq-accordion .accordion-button {
+      background: #fff;
+      color: #222;
+      font-size: 1.08rem;
+      box-shadow: none;
+      border: none;
+      font-weight: 600;
+    }
+    .faq-accordion .accordion-button:not(.collapsed) {
+      color: #e53935;
+      background: #fff;
+    }
+    .faq-accordion .accordion-item {
+      border: 1px solid #eee;
+      border-radius: 0;
+    }
+    .faq-accordion .accordion-body {
+      background: #fafafa;
+      font-size: 1rem;
+    }
+    @media (max-width: 991.98px) {
+      .logo-title-text { font-size: 1.5rem; }
+      .logo-title img { width: 55px; height: 55px; }
+      .top-icon { width: 40px; height: 40px; }
+      .top-icon svg { width: 22px; height: 22px; }
+      .faq-hero-text { font-size: 1.4rem; }
+    }
+    @media (max-width: 767.98px) {
+      .logo-title-text { font-size: 1.1rem; }
+      .logo-title img { width: 40px; height: 40px; }
+      .top-icon { width: 35px; height: 35px; }
+      .top-icon svg { width: 20px; height: 20px; }
+      .faq-section { padding: 12px 2vw 10px 2vw; }
+      .faq-hero { min-height: 100px; }
+      .faq-hero-text { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="container-fluid top-bar">
+    <div class="row align-items-center py-1">
+      <div class="col-12 col-lg-8">
+        <div class="logo-title ms-2 my-1">
+          <img src="logo.png" alt="Best Education Logo">
+          <div class="logo-title-text">
+            BEST EDUCATION<br>NIOS HUB
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex justify-content-lg-end justify-content-center mt-2 mt-lg-0 pe-lg-4">
+        <div class="top-icons">
+          <a href="tel:+918903591984" class="top-icon" title="Call +91 8903591984">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5A1 1 0 013 3.5h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:sumathynl.maths@gmail.com" class="top-icon" title="Email sumathynl.maths@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#222" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/918903591984" class="top-icon" title="WhatsApp +91 8903591984" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#222" stroke-width="2"/><path d="M17 15.5a6.5 6.5 0 01-10-7.5l1.5 1.5a4.5 4.5 0 006 6l1.5 1.5z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Menu Bar -->
+  <div class="container-fluid menu-bar">
+    <div class="row align-items-center">
+      <div class="col-12 d-flex flex-wrap align-items-center justify-content-between py-2">
+        <ul class="menu-list flex-grow-1 mb-0 ps-2">
+          <li><a href="index.html" style="text-decoration:none; color:inherit;">HOME</a></li>
+          <li><a href="aboutus.html" style="text-decoration:none; color:inherit;">ABOUT US</a></li>
+          <li><a href="BOOK.html" style="text-decoration:none; color:inherit;">NIOS BOOKS</a></li>
+          <li><a href="TMA.html" style="text-decoration:none; color:inherit;">NIOS TMA</a></li>
+          <li><a href="pyqs.html" style="text-decoration:none; color:inherit;">PYQs</a></li>
+          <li><a href="faqs.html" style="text-decoration:none; color:inherit;">FAQs</a></li>
+          <li><a href="contact.html" style="text-decoration:none; color:inherit;">CONTACT US</a></li>
+        </ul>
+        <div class="d-flex flex-wrap ms-auto pe-2">
+          <button class="menu-btn">REACH US</button>
+          <button class="menu-btn subjects">OUR SUBJECTS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Hero Banner -->
+  <div class="faq-hero">
+    <div class="faq-hero-text">Frequently Asked Questions</div>
+  </div>
+<br><br><br><br><br><br><br>
+  <!-- FAQ Section -->
+  <div class="faq-section shadow">
+    <h2>FAQs</h2>
+    
+      
+        <section class="container my-5" style="max-width: 900px;">
+  <div class="row g-4">
+    <!-- FAQ List -->
+    <div class="col-12">
+
+        <div class="accordion faq-accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqOneHeader">
+          <button class="accordion-button  fw-bold"style="color:#ff512" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+            What is NIOS?
+          </button>
+        </h2>
+        <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneHeader" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            The National Institute of Open Schooling (NIOS) is an educational organisation which imparts education through Open and Distance Learning Mode and also conducts examinations for grant of certificates up to pre-degree level at par with other National Boards viz. the Central Board of Secondary Education (CBSE) and Council for the Indian School Certificate Examination (CISCE).
+          </div>
+        </div>
+      </div>
+      <div class="accordion" id="customFaqAccordion">
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="faqTwoHeader">
+          <button class="accordion-button collapsed fw-bold" style="color:#ff512" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+            What is Open and Distance Learning system?
+          </button>
+        </h2>
+        <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeader" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Open and Distance Learning (ODL) is a flexible education system that allows students to learn at their own pace, often from home, using study materials and online resources, without attending regular classes.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <!-- FAQ Item 1 -->
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+              What is NIOS?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+              The National Institute of Open Schooling (NIOS) is a national board of education in India, established by the Ministry of Education. It provides education through open and distance learning, offering flexibility to learners who cannot attend regular schools due to various reasons.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading2">
+            <button class="accordion-button collapsed fw-semibold  bg-light rounded" style="color:#ff512"  type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2" style="font-size:1.1rem;">
+              What courses does NIOS offer?
+            </button>
+          </h2>
+          <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+              NIOS offers a range of courses:
+              <ul class="ps-3 mt-2">
+                <li>Open Basic Education (OBE) for levels equivalent to classes III, V, and VIII</li>
+                <li>Secondary Course (equivalent to class X)</li>
+                <li>Senior Secondary Course (equivalent to class XII)</li>
+                <li>Vocational Education Courses</li>
+                <li>Life Enrichment Programs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading3">
+            <button class="accordion-button collapsed fw-semibold  bg-light rounded"style="color:#ff512" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3" style="font-size:1.1rem;">
+              Is the NIOS certificate recognized?
+            </button>
+          </h2>
+          <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+              Yes, certificates issued by NIOS for Secondary and Senior Secondary levels are recognized at par with those from other national boards like CBSE and CISCE. They are valid for higher education and government jobs.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading4">
+            <button class="accordion-button collapsed fw-semibold  bg-light rounded"style="color:#ff512" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4" style="font-size:1.1rem;">
+              Who can take admission in NIOS?
+            </button>
+          </h2>
+          <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+              <ul class="ps-3 mt-2">
+                <li>For Secondary (Class X): Anyone who has passed class VIII and is at least 14 years old, or provides a self-certificate stating they can pursue the course.</li>
+                <li>For Senior Secondary (Class XII): Students must have passed the Secondary (Class X) examination from a recognized board and meet the minimum age requirement.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading5">
+            <button class="accordion-button collapsed fw-semibold  bg-light rounded"style="color:#ff512" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5" style="font-size:1.1rem;">
+              How can I take admission in NIOS?
+            </button>
+          </h2>
+          <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+              Admissions are 100% online. You can:
+              <ul class="ps-3 mt-2">
+                <li>Register directly on the NIOS website</li>
+                <li>Visit a nearby Accredited Institution (Study Centre) for help</li>
+                <li>Go to a Regional Centre</li>
+                <li>Use Common Services Centres (CSC) across India for assistance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+<!-- FAQ Itemsljdanucdsjchnsayiscajnxliu8eqxknxnaf,xfnuy sfhdbuygawehfbdsnb uyaGchdbhcm 5 -->
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+              What documents are required for admission?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+                - Proof of age (birth certificate, Aadhaar card, etc.)
+                - Previous educational qualifications
+                - Residential proof
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+Can I choose my own subjects?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+Yes, NIOS offers a wide range of subjects and allows learners to choose combinations as per their interests and future plans, within the guidelines of passing and certification criteria
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+How is NIOS different from regular schooling?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+- Flexible learning schedule: Study at your own pace
+- Self-learning materials provided
+- Face-to-face support classes on weekends/holidays at study centres
+- Option to appear for exams as per preparation, not bound by a fixed timetable
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+Are NIOS students eligible for competitive exams and higher education?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+Yes, NIOS students are eligible for competitive exams like IIT JEE, NEET, and for admission to universities and professional colleges, provided they meet other eligibility criteria            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+What is the examination system in NIOS?            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+- Public examinations are held twice a year (April-May and October-November)
+- On-Demand Examination System (ODES) allows learners to appear for exams as per their readiness
+- Credit accumulation is possible over a period of five years            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+*What is the validity of NIOS admission?*  
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+Admission is valid for five years, during which learners can accumulate credits by passing subjects at their own pace.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+*What support does NIOS provide to learners?*  
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+- Self-learning materials (printed and digital)
+- Audio-video resources
+- Personal Contact Programmes (PCP) at study centres
+- Tutor Marked Assignments (TMA) for continuous assessment            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+*Is there a provision for re-evaluation or duplicate certificates?*  
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+Yes, NIOS provides options for re-evaluation of answer sheets and issuance of duplicate certificates in case of loss or damage            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button fw-semibold bg-light rounded" style="color:#ff512"type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-size:1.1rem;">
+*What is the difference between NIOS and other boards like CBSE/ICSE?*</div>
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#customFaqAccordion">
+            <div class="accordion-body" style="font-size:1rem; color:#333;">
+| Feature                  |    NIOS                                    | CBSE/ICSE                        |<br>
+|--------------------------|-----------------------------------------|----------------------------------|<br>
+| Learning Mode            | Open and Distance Learning              | Regular classroom-based          |<br>
+| Flexibility              | High (choose subjects, exam schedule)   | Fixed schedule and subjects      |<br>
+| Recognition              | Nationally recognized                   | Nationally recognized            |<br>
+| Support                  | Study materials, PCP, online resources  | Classroom teaching               |<br>
+| Exam Frequency           | Twice a year + On-Demand                | Once a year                     |<br>
+                </div>
+          </div>
+        </div>
+
+
+        <!-- Add more FAQ items similarly -->
+
+      </div>
+      
+
+</section>
+
+<!-- Bootstrap JS Bundle (required for accordion) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS (for dropdown functionality) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About NIOS</h5>
+          <p>At Best Education NIOS Hub, we provide expert guidance and resources to help you succeed. Our team assists with subject selection, exam preparation, and all administrative processes, ensuring a smooth and motivating learning experience.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Course Materials</h5>
+          <ul class="list-unstyled">
+            <li>Secondary Schooling</li>
+            <li>Senior Secondary Schooling</li>
+            <li>Secondary Science</li>
+            <li>Senior Secondary Commerce</li>
+            <li>Senior Secondary Arts</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Contact</h5>
+          <p>Address: No 1 D St.John's College Road ,Tirunelveli ,TamilNadu<br>
+          Email: <a href="mailto:sumathynl.maths@gmail.com">sumathynl.maths@gmail.com</a><br>
+          Phone: +91 8903591984</p>
+        </div>
+      </div>
+      <div class="text-center mt-3" style="font-size:0.95rem;">
+        © 2001 Best Eduaction NIOS Hub | All Rights Reserved | Designed by <a href="niosbest.in" target="_blank">Niosbest.in</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

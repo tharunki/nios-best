@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NIOS TMA | Best Education NIOS Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #fff3c6; }
+    .top-bar {
+      background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+    }
+    .logo-title {
+      display: flex; align-items: center; gap: 15px;
+    }
+    .footer {
+      background: #222;
+      color: #fff;
+      padding: 32px 0 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    .footer h5 {
+      color: #ffcc66;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .footer a {
+      color: #ffcc66;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 991.98px) {
+      .logo-title-text { font-size: 1.5rem; }
+      .logo-title img { width: 55px; height: 55px; }
+      .top-icon { width: 40px; height: 40px; }
+      .top-icon svg { width: 22px; height: 22px; }
+      .hero-text { font-size: 1.4rem; }
+    }
+    @media (max-width: 767.98px) {
+      .logo-title-text { font-size: 1.1rem; }
+      .logo-title img { width: 40px; height: 40px; }
+      .top-icon { width: 35px; height: 35px; }
+      .top-icon svg { width: 20px; height: 20px; }
+      .apply-section, .documents-section { padding: 12px 2vw 10px 2vw; }
+      .hero-img { min-height: 120px; }
+      .hero-text { font-size: 1.05rem; }
+    }
+    .logo-title img {
+      width: 70px; height: 70px; border-radius: 50%; background: #fff; object-fit: cover;
+    }
+    .logo-title-text {
+      color: #fff; font-size: 2.2rem; font-weight: bold; line-height: 1.1; letter-spacing: 1px;
+    }
+    .top-icons {
+      display: flex; align-items: center; gap: 35px;
+    }
+    .top-icon {
+      width: 48px; height: 48px; background: #fff; border-radius: 50%; border: 3px solid #222;
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    }
+    .top-icon svg { width: 28px; height: 28px; }
+    .menu-bar { background: #ffcc66; }
+    .menu-list {
+      display: flex; align-items: center; list-style: none; margin: 0; padding: 0; flex-wrap: wrap;
+    }
+    .menu-list li {
+      margin: 0 18px; font-size: 1.25rem; color: #222; font-weight: 600; cursor: pointer;
+      letter-spacing: 0.5px; transition: color 0.2s; white-space: nowrap;
+    }
+    .menu-list li:hover { color: #ff512f; }
+    .menu-btn {
+      border-radius: 22px; font-size: 1.1rem; font-weight: bold; margin-left: 12px; padding: 8px 22px;
+      border: none; outline: 2px solid #222; background: #ff512f; color: #fff;
+      transition: background 0.2s, color 0.2s;
+    }
+    .menu-btn.subjects { background: #f09819; color: #222; }
+    .tma-hero {
+      background: url('img/hero_blog_teaching-strategies_middle-school_photo_alamy_2DHA40H_Maskot.webp') center center/cover no-repeat;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 0;
+    }
+    .tma-hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3);
+    }
+    .tma-title {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    .tma-section {
+      background: #fff3c6;
+      padding: 24px 16px 32px 16px;
+      max-width: 900px;
+      margin: -60px auto 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+    }
+    .tma-section h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 32px 0 12px 0;
+      text-align: center;
+      color: #222;
+    }
+    .tma-section p, .tma-section ul {
+      font-size: 1.07rem;
+      margin-bottom: 16px;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .tma-section ul {
+      padding-left: 22px;
+    }
+    .tma-section strong {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 991.98px) {
+      .logo-title-text { font-size: 1.5rem; }
+      .logo-title img { width: 55px; height: 55px; }
+      .top-icon { width: 40px; height: 40px; }
+      .top-icon svg { width: 22px; height: 22px; }
+      .tma-title { font-size: 1.3rem; }
+      .tma-section { margin-top: -40px; }
+    }
+    @media (max-width: 767.98px) {
+      .logo-title-text { font-size: 1.1rem; }
+      .logo-title img { width: 40px; height: 40px; }
+      .top-icon { width: 35px; height: 35px; }
+      .top-icon svg { width: 20px; height: 20px; }
+      .tma-section { padding: 12px 2vw 20px 2vw; }
+      .tma-section h2 { font-size: 1.08rem; }
+      .tma-section p, .tma-section ul { font-size: 0.98rem; }
+      .tma-hero { min-height: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="container-fluid top-bar">
+    <div class="row align-items-center py-1">
+      <div class="col-12 col-lg-8">
+        <div class="logo-title ms-2 my-1">
+          <img src="logo.png" alt="Best Education Logo">
+          <div class="logo-title-text">
+            BEST EDUCATION<br>NIOS HUB
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex justify-content-lg-end justify-content-center mt-2 mt-lg-0 pe-lg-4">
+        <div class="top-icons">
+          <a href="tel:+918903591984" class="top-icon" title="Call +91 8903591984">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5A1 1 0 013 3.5h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:sumathynl.maths@gmail.com" class="top-icon" title="Email sumathynl.maths@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#222" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/918903591984" class="top-icon" title="WhatsApp +91 8903591984" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#222" stroke-width="2"/><path d="M17 15.5a6.5 6.5 0 01-10-7.5l1.5 1.5a4.5 4.5 0 006 6l1.5 1.5z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Menu Bar -->
+  <div class="container-fluid menu-bar">
+    <div class="row align-items-center">
+      <div class="col-12 d-flex flex-wrap align-items-center justify-content-between py-2">
+        <ul class="menu-list flex-grow-1 mb-0 ps-2">
+          <li><a href="index.html" style="text-decoration:none; color:inherit;">HOME</a></li>
+          <li><a href="aboutus.html" style="text-decoration:none; color:inherit;">ABOUT US</a></li>
+          <li><a href="BOOK.html" style="text-decoration:none; color:inherit;">NIOS BOOKS</a></li>
+          <li><a href="tma.html" style="text-decoration:none; color:inherit;">NIOS TMA</a></li>
+          <li><a href="pyqs.html" style="text-decoration:none; color:inherit;">PYQs</a></li>
+          <li><a href="faqs.html" style="text-decoration:none; color:inherit;">FAQs</a></li>
+          <li><a href="contact.html" style="text-decoration:none; color:inherit;">CONTACT US</a></li>
+        </ul>
+        <div class="d-flex flex-wrap ms-auto pe-2">
+          <button class="menu-btn">REACH US</button>
+          <button class="menu-btn subjects">OUR SUBJECTS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TMA Hero Section -->
+  <div class="tma-hero">
+    <div class="tma-title">NIOS TMA</div>
+  </div>
+<br><br>
+  <!-- TMA Content Section -->
+  <div class="tma-section">
+    <h2>NIOS TMA Submission Schedule for Session 2021-22</h2>
+    <strong>April/May Exam Session</strong>
+    <p>Last Date for Learners to Submit TMAs to Study Centres: <b>31st January 2022</b></p>
+    <p>Feedback from Subject Teachers to Learners: <b>15th February 2022</b></p>
+    <strong>October/November Exam Session</strong>
+    <p>Last Date for Learners to Submit TMAs to Study Centres: <b>31st July 2022</b></p>
+    <p>Feedback from Subject Teachers to Learners: <b>15th August 2022</b></p>
+
+    <h2>NIOS TMA Submission with Best Education NIOS Hub</h2>
+    <p>At Best Education NIOS Hub, we understand that submitting your Tutor Marked Assignments (TMAs) on time is crucial for your NIOS academic progress. To make this process easier and more convenient for you, we take responsibility for uploading your completed TMA documents to the official NIOS portal on your behalf.</p>
+    <strong>How It Works:</strong>
+    <ul>
+      <li>You prepare your TMAs carefully in your own handwriting, following the NIOS guidelines.</li>
+      <li>Submit your handwritten TMAs to us by the specified deadline.</li>
+      <li>Our team scans and uploads your TMAs as PDF files to the NIOS student portal within the official submission window.</li>
+      <li>We ensure all necessary details like enrollment number, subject name, and contact info are correctly included on the cover page.</li>
+      <li>After uploading, we monitor the status and keep you updated about the evaluation and feedback from subject experts.</li>
+    </ul>
+    <strong>Benefits of Our Service:</strong>
+    <ul>
+      <li>Saves you from the technical hassle of online submission.</li>
+      <li>Ensures your TMAs are uploaded correctly and on time to avoid penalties.</li>
+      <li>Provides peace of mind so you can focus on your studies and exam preparation.</li>
+      <li>We assist you in tracking your TMA status and feedback through the student portal.</li>
+      <li>By choosing Best Education NIOS Hub, you get expert support not only in learning but also in managing your important academic submissions smoothly and efficiently. Reach out to us to know more about TMA preparation and submission services!</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About NIOS</h5>
+          <p>At Best Education NIOS Hub, we provide expert guidance and resources to help you succeed. Our team assists with subject selection, exam preparation, and all administrative processes, ensuring a smooth and motivating learning experience.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Course Materials</h5>
+          <ul class="list-unstyled">
+            <li>Secondary Schooling</li>
+            <li>Senior Secondary Schooling</li>
+            <li>Secondary Science</li>
+            <li>Senior Secondary Commerce</li>
+            <li>Senior Secondary Arts</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Contact</h5>
+          <p>Address: No 1 D St.John's College Road ,Tirunelveli ,TamilNadu<br>
+          Email: <a href="mailto:sumathynl.maths@gmail.com">sumathynl.maths@gmail.com</a><br>
+          Phone: +91 8903591984</p>
+        </div>
+      </div>
+      <div class="text-center mt-3" style="font-size:0.95rem;">
+        © 2001 Best Eduaction NIOS Hub | All Rights Reserved | Designed by <a href="niosbest.in" target="_blank">Niosbest.in</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

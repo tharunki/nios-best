@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Best Education NIOS Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #fff3c6;
+      color: #222;
+    }
+    .about-header {
+      background: url('img/hero_blog_teaching-strategies_middle-school_photo_alamy_2DHA40H_Maskot.webp') center center/cover no-repeat;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .about-header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.2);
+    }
+    .about-title {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    .about-section {
+      background: #fff3c6;
+      padding: 24px 16px 32px 16px;
+      max-width: 900px;
+      margin: -60px auto 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+    }
+    .about-section h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 32px 0 12px 0;
+      text-align: center;
+      color: #222;
+    }
+    .about-section h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 28px 0 10px 0;
+      text-align: center;
+      color: #222;
+    }
+    .about-section p {
+      font-size: 1.07rem;
+      margin-bottom: 16px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .about-section ul {
+      margin: 0 auto 16px auto;
+      padding: 0 0 0 20px;
+      max-width: 700px;
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      .about-header {
+        height: 110px;
+      }
+      .about-title {
+        font-size: 1.3rem;
+      }
+      .about-section {
+        padding: 12px 2vw 20px 2vw;
+        margin-top: -40px;
+      }
+      .about-section h2, .about-section h3 {
+        font-size: 1.08rem;
+      }
+      .about-section p {
+        font-size: 0.98rem;
+      }
+    }
+    .top-bar {
+      background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+      padding: 0;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo-title img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: cover;
+    }
+    .footer {
+      background: #222;
+      color: #fff;
+      padding: 32px 0 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    .footer h5 {
+      color: #ffcc66;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .footer a {
+      color: #ffcc66;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 991.98px) {
+      .logo-title-text { font-size: 1.5rem; }
+      .logo-title img { width: 55px; height: 55px; }
+      .top-icon { width: 40px; height: 40px; }
+      .top-icon svg { width: 22px; height: 22px; }
+      .hero-text { font-size: 1.4rem; }
+    }
+    @media (max-width: 767.98px) {
+      .logo-title-text { font-size: 1.1rem; }
+      .logo-title img { width: 40px; height: 40px; }
+      .top-icon { width: 35px; height: 35px; }
+      .top-icon svg { width: 20px; height: 20px; }
+      .apply-section, .documents-section { padding: 12px 2vw 10px 2vw; }
+      .hero-img { min-height: 120px; }
+      .hero-text { font-size: 1.05rem; }
+    }
+    .logo-title-text {
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: bold;
+      line-height: 1.1;
+      letter-spacing: 1px;
+    }
+    .top-icons {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+    .top-icon {
+      width: 48px;
+      height: 48px;
+      background: #fff;
+      border-radius: 50%;
+      border: 3px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .top-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+    .menu-bar {
+      background: #ffcc66;
+    }
+    .navbar-toggler {
+      border: none;
+      font-size: 1.5rem; /* Larger hamburger icon */
+      padding: .25rem .75rem;
+    }
+    .navbar-toggler-icon {
+      color: #222;
+    }
+    .navbar-collapse {
+      background: #ffcc66; /* Ensures background on collapsed menu */
+      padding: 10px 0;
+    }
+    .menu-list .nav-item .nav-link {
+      font-size: 1.25rem;
+      color: #222 !important;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      padding: 0.5rem 1rem; /* Adjust padding for list items */
+    }
+    .menu-list .nav-item .nav-link:hover {
+      color: #ff512f !important;
+    }
+    .menu-btn-group {
+      display: flex;
+      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+      justify-content: center;
+      padding: 10px 0; /* Padding around buttons in collapsed view */
+    }
+    .menu-btn {
+      border-radius: 22px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 5px 8px; /* Adjust margin for spacing */
+      padding: 8px 22px;
+      border: none;
+      outline: 2px solid #222;
+      transition: background 0.2s, color 0.2s;
+      background: #ff512f;
+      color: #fff;
+    }
+    .menu-btn.subjects {
+      background: #f09819;
+      color: #222;
+    }
+    /* Main Section */
+    .main-section {
+      padding: 50px 0 0 0;
+    }
+    .info-section {
+      background: transparent;
+      padding: 0 2vw;
+    }
+    .success {
+      color: #0033cc;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .necessary {
+      font-size: 2rem;
+      color: #0033cc;
+      display: block;
+      margin-top: 4px;
+    }
+    .why-title {
+      font-size: 2.6rem;
+      font-weight: bold;
+      margin: 25px 0 18px 0;
+      color: #222;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .info-section p {
+      font-size: 1.08rem;
+      color: #222;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      text-align: left; /* Aligns text left within its confined width */
+      max-width: 650px; /* Constrain paragraph width */
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .application-form {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      padding: 30px 25px;
+      width: 100%;
+      max-width: 480px;
+      box-sizing: border-box;
+      margin-left: 5%; /* Shift form slightly left */
+      margin-right: auto;
+    }
+    .application-form label {
+      font-size: 0.95rem;
+      color: #222;
+      margin-bottom: 2px;
+    }
+    .application-form input[type="text"],
+    .application-form input[type="date"],
+    .application-form input[type="number"],
+    .application-form input[type="tel"],
+    .application-form input[type="email"] {
+      font-size: 1rem;
+    }
+    .application-form .form-check-label {
+      margin-right: 15px;
+    }
+    .application-form .form-text {
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .application-form button[type="submit"] {
+      background: #112266;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    .application-form button[type="submit"]:hover {
+      background: #0033cc;
+    }
+    /* Responsive Styles */
+    @media (min-width: 992px) {
+      .menu-btn-group {
+        justify-content: flex-end; /* Align buttons right on desktop */
+      }
+    }
+    @media (max-width: 991.98px) {
+      .logo-title-text {
+        font-size: 1.5rem; /* Adjusted for tablet screens */
+      }
+      .logo-title img {
+        width: 55px;
+        height: 55px;
+      }
+      .top-icon {
+        width: 40px;
+        height: 40px;
+        border: 2px solid #222;
+      }
+      .top-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+      .navbar-collapse {
+        order: 1; /* Puts menu below toggler */
+        width: 100%; /* Ensures it takes full width */
+      }
+      .navbar-toggler {
+        order: 2; /* Puts toggler on the right on mobile */
+        margin-left: auto; /* Pushes toggler to the right */
+        display: block; /* Ensure it's visible */
+      }
+      .menu-bar .container-fluid {
+        flex-wrap: wrap; /* Allow wrapping */
+      }
+      .menu-list {
+        flex-direction: column; /* Stack menu items */
+        align-items: center; /* Center items */
+        padding: 0;
+        width: 100%;
+      }
+      .menu-list li {
+        width: 100%; /* Full width for clickable area */
+        text-align: center;
+        margin: 5px 0; /* Add vertical spacing */
+      }
+      .menu-btn-group {
+        width: 100%;
+        margin-top: 10px; /* Space between menu items and buttons */
+      }
+      .main-section {
+        padding: 30px 0 0 0;
+      }
+      .application-form {
+        margin-left: auto; /* Reset margin for proper centering/stacking */
+        margin-right: auto;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .top-bar .row {
+        flex-direction: column; /* Stack logo and icons */
+        text-align: center;
+      }
+      .top-icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .logo-title {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .menu-bar .container-fluid {
+        padding: 0 10px;
+      }
+      .navbar-toggler {
+        /* Already handled by parent flex-end */
+      }
+      .info-section p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+      }
+      .why-title {
+        font-size: 1.8rem;
+      }
+      .success {
+        font-size: 1.2rem;
+      }
+      .necessary {
+        font-size: 1.6rem;
+      }
+      .application-form {
+        margin: 20px auto 0 auto;
+        padding: 15px 10px;
+      }
+    }
+    @media (max-width: 575.98px) { /* Extra small devices */
+      .logo-title-text {
+        font-size: 1.2rem;
+      }
+      .logo-title img {
+        width: 40px;
+        height: 40px;
+      }
+      .top-icon {
+        width: 35px;
+        height: 35px;
+      }
+      .top-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      .menu-btn {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+        margin: 4px 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- Top Bar -->
+  <div class="container-fluid top-bar">
+    <div class="row align-items-center py-1">
+      <div class="col-12 col-lg-8">
+        <div class="logo-title ms-2 my-1">
+          <img src="img/logo.png" alt="Best Education Logo">
+          <div class="logo-title-text">
+            BEST EDUCATION<br>NIOS HUB
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex justify-content-lg-end justify-content-center mt-2 mt-lg-0 pe-lg-4">
+        <div class="top-icons">
+  <a href="tel:+918903591984" class="top-icon" title="Call +91 8903591984">
+    <!-- Phone SVG -->
+    <svg viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5A1 1 0 013 3.5h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="mailto:sumathynl.maths@gmail.com" class="top-icon" title="Email sumathynl.maths@gmail.com">
+    <!-- Email SVG -->
+    <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#222" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="https://wa.me/918903591984" class="top-icon" title="WhatsApp +91 8903591984" target="_blank" rel="noopener">
+    <!-- WhatsApp SVG -->
+    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#222" stroke-width="2"/><path d="M17 15.5a6.5 6.5 0 01-10-7.5l1.5 1.5a4.5 4.5 0 006 6l1.5 1.5z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Bar -->
+  <nav class="navbar navbar-expand-lg menu-bar">
+    <div class="container-fluid">
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto menu-list">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="book.html">NIOS BOOKS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">NIOS TMA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">PYQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">CONTACT US</a></li>
+        </ul>
+        <div class="menu-btn-group ms-auto">
+          <button class="menu-btn">REACH US</button>
+          <button class="menu-btn subjects">OUR SUBJECTS</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Header -->
+  <div class="about-header">
+    <div class="about-title">ABOUT US</div>
+  </div>
+  <!-- About Content -->
+   <br> <br> <br> 
+  <div class="about-section">
+    <p>Welcome to Best Education NIOS Hub, your trusted partner for open schooling and alternative education solutions. We are dedicated to empowering students of all backgrounds to achieve their academic goals through the National Institute of Open Schooling (NIOS) platform.</p>
+    
+    <h2>Who We Are ?</h2>
+    <p>Best Education NIOS Hub is an education centre that specializes in helping students enroll and study under NIOS. We understand that traditional schooling is not always the best fit for everyone. Some students may have missed out on regular school due to personal reasons, work commitments, health issues, or other challenges. Others may want to study at their own pace or choose subjects that interest them most.
+
+That’s where NIOS comes in, and that’s where we come in too! We have been guiding students on their NIOS journey for over 20 years. Our experienced team knows the NIOS system inside out, and we are here to make your learning experience smooth, enjoyable, and successful.</p>    
+
+    <h2>What is NIOS?</h2>
+        <p>The National Institute of Open Schooling (NIOS) is a government-recognized board that offers open and distance learning. It provides a flexible education system for students who cannot attend regular schools or want an alternative way to study.
+<br>
+
+<strong>NIOS, you can:</strong> 
+<br>
+1.Choose your own subjects from a wide range of academic and vocational courses.
+<br>
+
+2.Study at your own pace without the pressure of fixed school hours.
+<br>
+
+3.Appear for exams when you feel ready, giving you more control over your learning.
+<br>
+
+4.Get certificates that are accepted by universities, colleges, and employers across India and abroad.
+<br>
+
+5.NIOS is perfect for students who want to continue their education but need flexibility due to work, family, or other reasons.</p>
+    <h2>Why Choose Best Education NIOS Hub?</h2>
+    <p>At Best Education NIOS Hub, we believe that every student deserves a chance to learn and succeed. We offer personalized support tailored to your unique needs. Here’s why students trust us:
+<br>
+<strong>1. Experience You Can Count On</strong><br>
+Since 2001, we have helped hundreds of students successfully complete their NIOS education. Our long experience means we understand the challenges students face and know how to solve them. We stay updated with all NIOS rules and exam schedules, so you don’t have to worry about missing important information.
+<br>
+<strong>2. Personalized Guidance</strong><br>
+Every student is different. We provide one-on-one counseling to help you choose the right subjects based on your interests and career goals. Whether you want to focus on science, commerce, arts, or vocational courses, we help you make the best choices.
+<br>
+<strong>3. Flexible Learning Options</strong><br>
+We offer both online and offline classes, so you can learn in the way that suits you best. Our classes are designed to be easy to follow, with clear explanations and plenty of practice. If you miss a class, don’t worry—we provide recorded sessions and study materials to keep you on track.
+<br>
+<strong>4. Complete Support</strong><br>
+From admission to exam preparation, we are with you every step of the way. We help you fill out application forms, submit documents, and register for exams. Our teachers provide regular tests and feedback to improve your performance. We also help you prepare for practical exams and project work.
+<br>
+<strong>5. Affordable Fees</strong><br>
+We believe education should be affordable for all. Our fee structure is transparent and reasonable, with no hidden charges. We also guide you on how to apply for scholarships or fee concessions if you qualify.
+<br>
+<strong>6. Motivating Environment</strong><br>
+Learning is easier when you feel supported and encouraged. At Best Education NIOS Hub, we create a friendly and positive atmosphere where students can ask questions freely and share their ideas. We organize workshops, group discussions, and motivational sessions to keep you inspired.
+<br>
+<strong>7. Career and Higher Education Guidance</strong><br>
+Completing NIOS is just the beginning of your journey. We provide counseling on further education options, competitive exams, and career planning. Whether you want to join college, start a job, or learn new skills, we help you plan your future confidently.</p>
+    <br>
+    
+    
+    <h2>Our Courses</h2>
+    <p>We offer guidance and coaching for the following NIOS courses:
+<br>
+Secondary Course (Class 10 Equivalent): Basic subjects like English, Mathematics, Science, Social Studies, and more.
+<br>
+Senior Secondary Course (Class 12 Equivalent): Advanced subjects in Science, Commerce, Arts, and Vocational streams.
+<br>
+Vocational Courses: Skill-based courses that help you gain practical knowledge and improve job prospects.
+<br>
+Our study materials are designed to be simple and easy to understand.<br> We provide notes, sample papers, and previous years’ question papers to help you practice effectively.
+<br>
+</p>    
+    <h2>Our Teaching Approach</h2>
+    <p>We believe learning should be fun and effective. Our teachers use simple language and real-life examples to explain concepts. We focus on building strong fundamentals so you can confidently answer exam questions.
+<br>
+We encourage interactive learning through quizzes, group activities, and regular tests. This helps students retain information better and identify areas where they need improvement.
+<br>
+<strong>Facilities</strong> <br>
+Well-equipped classrooms for offline learning.
+<br>
+Online learning platform with live and recorded classes.
+<br>
+Study materials and resources provided free of cost.
+<br>
+Regular doubt clearing sessions to help you whenever you get stuck.
+<br>
+Student support helpline for quick assistance.</p>    
+    
+    <h2>Our Commitment</h2>
+    <p>We are committed to transparency, timely communication, and helping every student achieve their academic dreams through NIOS.</p>
+    
+    <h2>How to Join Us?</h2>
+    <p>Contact us for a free counseling session and personalized guidance. Let us help you start your NIOS journey with confidence!</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About NIOS</h5>
+          <p>At Best Education NIOS Hub, we provide expert guidance and resources to help you succeed. Our team assists with subject selection, exam preparation, and all administrative processes, ensuring a smooth and motivating learning experience.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Course Materials</h5>
+          <ul class="list-unstyled">
+            <li>Secondary Schooling</li>
+            <li>Senior Secondary Schooling</li>
+            <li>Secondary Science</li>
+            <li>Senior Secondary Commerce</li>
+            <li>Senior Secondary Arts</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Contact</h5>
+          <p>Address: No 1 D St.John's College Road ,Tirunelveli ,TamilNadu<br>
+          Email: <a href="mailto:sumathynl.maths@gmail.com">sumathynl.maths@gmail.com</a><br>
+          Phone: +91 8903591984</p>
+        </div>
+      </div>
+      <div class="text-center mt-3" style="font-size:0.95rem;">
+        © 2001 Best Eduaction NIOS Hub | All Rights Reserved | Designed by <a href="niosbest.in" target="_blank">Niosbest.in</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

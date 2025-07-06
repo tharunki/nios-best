@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply Now | Best Education NIOS Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #fff3c6; }
+    .top-bar {
+      background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+    }
+    .logo-title {
+      display: flex; align-items: center; gap: 15px;
+    }
+    .logo-title img {
+      width: 70px; height: 70px; border-radius: 50%; background: #fff; object-fit: cover;
+    }
+    .logo-title-text {
+      color: #fff; font-size: 2.2rem; font-weight: bold; line-height: 1.1; letter-spacing: 1px;
+    }
+    .top-icons {
+      display: flex; align-items: center; gap: 35px;
+    }
+    .top-icon {
+      width: 48px; height: 48px; background: #fff; border-radius: 50%; border: 3px solid #222;
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    }
+    .top-icon svg { width: 28px; height: 28px; }
+    .menu-bar { background: #ffcc66; }
+    .menu-list {
+      display: flex; align-items: center; list-style: none; margin: 0; padding: 0; flex-wrap: wrap;
+    }
+    .menu-list li {
+      margin: 0 18px; font-size: 1.25rem; color: #222; font-weight: 600; cursor: pointer;
+      letter-spacing: 0.5px; transition: color 0.2s; white-space: nowrap;
+    }
+    .menu-list li:hover { color: #ff512f; }
+    .menu-btn {
+      border-radius: 22px; font-size: 1.1rem; font-weight: bold; margin-left: 12px; padding: 8px 22px;
+      border: none; outline: 2px solid #222; background: #ff512f; color: #fff;
+      transition: background 0.2s, color 0.2s;
+    }
+    .menu-btn.subjects { background: #f09819; color: #222; }
+    .hero-img {
+      position: relative;
+      width: 100%;
+      min-height: 170px;
+      background: url('img/hero_blog_teaching-strategies_middle-school_photo_alamy_2DHA40H_Maskot.webp') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.18);
+    }
+    .hero-text {
+      position: relative;
+      color: #fff;
+      font-size: 2.3rem;
+      font-weight: bold;
+      z-index: 1;
+      text-align: center;
+      letter-spacing: 2px;
+      padding: 20px;
+    }
+    .apply-section {
+      background: #fff;
+      margin: -40px auto 40px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      padding: 32px 18px 24px 18px;
+    }
+    .apply-section h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .apply-section p {
+      font-size: 1.06rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .apply-form input, .apply-form select, .apply-form textarea {
+      font-size: 1rem;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+    .apply-form label {
+      font-size: 0.98rem;
+      color: #222;
+      margin-bottom: 3px;
+    }
+    .apply-form .form-check-label {
+      margin-right: 15px;
+    }
+    .apply-form .form-check {
+      margin-bottom: 10px;
+    }
+    .apply-form .form-text {
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .apply-form button[type="submit"] {
+      background: #112266;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    .apply-form button[type="submit"]:hover {
+      background: #0033cc;
+    }
+    .documents-section {
+      background: #fff3c6;
+      border-radius: 12px;
+      margin: 30px auto 0 auto;
+      max-width: 900px;
+      padding: 18px 18px 10px 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+    }
+    .documents-section h3 {
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin: 18px 0 10px 0;
+      color: #222;
+    }
+    .documents-section ul {
+      margin-bottom: 10px;
+      padding-left: 22px;
+    }
+    .documents-section li {
+      font-size: 1.02rem;
+      margin-bottom: 7px;
+    }
+    .footer {
+      background: #222;
+      color: #fff;
+      padding: 32px 0 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    .footer h5 {
+      color: #ffcc66;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .footer a {
+      color: #ffcc66;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 991.98px) {
+      .logo-title-text { font-size: 1.5rem; }
+      .logo-title img { width: 55px; height: 55px; }
+      .top-icon { width: 40px; height: 40px; }
+      .top-icon svg { width: 22px; height: 22px; }
+      .hero-text { font-size: 1.4rem; }
+    }
+    @media (max-width: 767.98px) {
+      .logo-title-text { font-size: 1.1rem; }
+      .logo-title img { width: 40px; height: 40px; }
+      .top-icon { width: 35px; height: 35px; }
+      .top-icon svg { width: 20px; height: 20px; }
+      .apply-section, .documents-section { padding: 12px 2vw 10px 2vw; }
+      .hero-img { min-height: 120px; }
+      .hero-text { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="container-fluid top-bar">
+    <div class="row align-items-center py-1">
+      <div class="col-12 col-lg-8">
+        <div class="logo-title ms-2 my-1">
+          <img src="logo.png" alt="Best Education Logo">
+          <div class="logo-title-text">
+            BEST EDUCATION<br>NIOS HUB
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex justify-content-lg-end justify-content-center mt-2 mt-lg-0 pe-lg-4">
+        <div class="top-icons">
+          <a href="tel:+918903591984" class="top-icon" title="Call +91 8903591984">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5A1 1 0 013 3.5h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:sumathynl.maths@gmail.com" class="top-icon" title="Email sumathynl.maths@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#222" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/918903591984" class="top-icon" title="WhatsApp +91 8903591984" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#222" stroke-width="2"/><path d="M17 15.5a6.5 6.5 0 01-10-7.5l1.5 1.5a4.5 4.5 0 006 6l1.5 1.5z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Menu Bar -->
+  <div class="container-fluid menu-bar">
+    <div class="row align-items-center">
+      <div class="col-12 d-flex flex-wrap align-items-center justify-content-between py-2">
+        <ul class="menu-list flex-grow-1 mb-0 ps-2">
+          <li><a href="index.html" style="text-decoration:none; color:inherit;">HOME</a></li>
+          <li><a href="aboutus.html" style="text-decoration:none; color:inherit;">ABOUT US</a></li>
+          <li><a href="BOOK.html" style="text-decoration:none; color:inherit;">NIOS BOOKS</a></li>
+          <li><a href="tma.html" style="text-decoration:none; color:inherit;">NIOS TMA</a></li>
+          <li><a href="pyqs.html" style="text-decoration:none; color:inherit;">PYQs</a></li>
+          <li><a href="faqs.html" style="text-decoration:none; color:inherit;">FAQs</a></li>
+          <li><a href="contact.html" style="text-decoration:none; color:inherit;">CONTACT US</a></li>
+        </ul>
+        <div class="d-flex flex-wrap ms-auto pe-2">
+          <button class="menu-btn">REACH US</button>
+          <button class="menu-btn subjects">OUR SUBJECTS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Banner -->
+  <div class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">Register Now</div>
+  </div>
+<br><br><br><br>
+  <!-- Application Section -->
+  <div class="apply-section shadow">
+    <h2> NIOS Registration Admission Open for Secondary(10th) and Senior Secondary(12th) Classes</h2>
+    <p>Fill the registration form below to apply under NIOS board.</p>
+    <form class="apply-form" action="https://formsubmit.co/sumathynl.maths@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Name of Candidate</label>
+          <input type="text" class="form-control" name="Name of Candidate" required>
+        </div>
+        <div class="col-md-6">
+          <label>Your email</label>
+          <input type="email" class="form-control" name="Email" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Your Phone</label>
+          <input type="tel" class="form-control" name="Phone" required>
+        </div>
+        <div class="col-md-6">
+          <label>Date of Birth</label>
+          <input type="date" class="form-control" name="Date of Birth" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Gender</label>
+          <div class="form-check form-check-inline ms-2">
+            <input class="form-check-input" type="radio" name="Gender" id="male" value="Male" required>
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" id="female" value="Female" required>
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" id="transgender" value="Transgender" required>
+            <label class="form-check-label" for="transgender">Transgender</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Father's/Guardian's Full Name</label>
+          <input type="text" class="form-control" name="Father's/Guardian's Name" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Mother's Full Name</label>
+          <input type="text" class="form-control" name="Mother's Name" required>
+        </div>
+        <div class="col-md-6">
+          <label>Course</label>
+          <select class="form-select" name="Course" required>
+            <option value="10th Secondary">10th Secondary</option>
+            <option value="12th Senior Secondary">12th Senior Secondary</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Category</label>
+          <select class="form-select" name="Category" required>
+            <option value="General">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label>Medium of Study</label>
+          <select class="form-select" name="Medium of Study" required>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label>Current Address (Area/Address/Pin code/City where Candidate needs School admission)</label>
+        <textarea class="form-control" name="Current Address" rows="2" required></textarea>
+      </div>
+      <div>
+        <label>Permanent Address same as Current Address?</label>
+        <div class="form-check form-check-inline ms-2">
+          <input class="form-check-input" type="radio" name="Same Address" id="sameYes" value="Yes" required>
+          <label class="form-check-label" for="sameYes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="Same Address" id="sameNo" value="No" required>
+          <label class="form-check-label" for="sameNo">No</label>
+        </div>
+      </div>
+      <div>
+        <label>Permanent Address (if not same as above)</label>
+        <textarea class="form-control" name="Permanent Address" rows="2"></textarea>
+      </div>
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" name="Terms" id="terms" required>
+        <label class="form-check-label" for="terms">
+          I agree to the terms of service and privacy policy on this website.
+        </label>
+      </div>
+      <button type="submit" class="btn">Accept Terms &amp; Proceed</button>
+      <div class="form-text mt-2">
+        <b>Note:</b> Services Included: Registration Fees, Admission Fees, Examination Fees, Practical Fees, Assignment Fees, Book Fees and Support Fees.
+      </div>
+    </form>
+  </div>
+
+  <!-- Documents Section -->
+  <div class="documents-section">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Documents required for 10th Class Admission</h3>
+        <ul>
+          <li>8th or 9th Class Pass school leaving certificate signed by the principal &amp; Gazetted officer</li>
+          <li>Address Proof (Aadhar Card)/ Rent Agreement (if rented)</li>
+          <li>Caste certificate (if OBC, SC, ST category)</li>
+          <li>Disability Certificate (for handicapped)</li>
+          <li>Original failure/compartment mark sheet of class 10th (for TOC transfer of credit)</li>
+          <li>One latest coloured photograph (passport size)</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>Documents required for 12th Class Admission</h3>
+        <ul>
+          <li>Scan/Photocopy of 10th class passed mark sheet</li>
+          <li>Address Proof (Aadhar Card)/ Rent Agreement (if rented)</li>
+          <li>Caste certificate (if OBC, SC, ST category)</li>
+          <li>Disability Certificate (for handicapped)</li>
+          <li>Original failure/compartment mark sheet of class 12th (for TOC transfer of credit)</li>
+          <li>One latest coloured photograph (passport size)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About NIOS</h5>
+          <p>At Best Education NIOS Hub, we provide expert guidance and resources to help you succeed. Our team assists with subject selection, exam preparation, and all administrative processes, ensuring a smooth and motivating learning experience.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Course Materials</h5>
+          <ul class="list-unstyled">
+            <li>Secondary Schooling</li>
+            <li>Senior Secondary Schooling</li>
+            <li>Secondary Science</li>
+            <li>Senior Secondary Commerce</li>
+            <li>Senior Secondary Arts</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Contact</h5>
+          <p>Address: No 1 D St.John's College Road ,Tirunelveli ,TamilNadu<br>
+          Email: <a href="mailto:sumathynl.maths@gmail.com">sumathynl.maths@gmail.com</a><br>
+          Phone: +91 8903591984</p>
+        </div>
+      </div>
+      <div class="text-center mt-3" style="font-size:0.95rem;">
+        © 2001 Best Eduaction NIOS Hub | All Rights Reserved | Designed by <a href="niosbest.in" target="_blank">Niosbest.in</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
