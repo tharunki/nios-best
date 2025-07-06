@@ -238,7 +238,7 @@
   <div class="apply-section shadow">
     <h2> NIOS Registration Admission Open for Secondary(10th) and Senior Secondary(12th) Classes</h2>
     <p>Fill the registration form below to apply under NIOS board.</p>
-    <form class="apply-form" action="https://formsubmit.co/sumathynl.maths@gmail.com" method="POST">
+    <form class="apply-form"  id="whatsappForm">
       <input type="hidden" name="_captcha" value="false">
       <div class="row">
         <div class="col-md-6">
@@ -406,5 +406,56 @@
   </footer>
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form from submitting normally
+
+    // Replace with your WhatsApp number (country code + number, no '+' sign)
+    const phoneNumber = "918903591984";
+
+    // Collect form data
+    const form = e.target;
+
+    const data = {
+      name: form["Name of Candidate"].value,
+      email: form["Email"].value,
+      phone: form["Phone"].value,
+      dob: form["Date of Birth"].value,
+      gender: form["Gender"].value,
+      fatherName: form["Father's/Guardian's Name"].value,
+      motherName: form["Mother's Name"].value,
+      course: form["Course"].value,
+      category: form["Category"].value,
+      medium: form["Medium of Study"].value,
+      currentAddress: form["Current Address"].value,
+      sameAddress: form["Same Address"].value,
+      permanentAddress: form["Permanent Address"].value || "Same as current",
+    };
+
+    // Create message
+    const message = 
+      `📄 *Application Form Details* %0A` +
+      `👤 Name: ${data.name}%0A` +
+      `📧 Email: ${data.email}%0A` +
+      `📞 Phone: ${data.phone}%0A` +
+      `🎂 DOB: ${data.dob}%0A` +
+      `⚧️ Gender: ${data.gender}%0A` +
+      `👨‍👧 Father/Guardian: ${data.fatherName}%0A` +
+      `👩‍👧 Mother: ${data.motherName}%0A` +
+      `🎓 Course: ${data.course}%0A` +
+      `🧬 Category: ${data.category}%0A` +
+      `🌐 Medium: ${data.medium}%0A` +
+      `🏠 Current Address: ${data.currentAddress}%0A` +
+      `📍 Permanent Address: ${data.permanentAddress}%0A` +
+      `✅ Agreed to Terms: Yes`;
+
+    // Encode and redirect to WhatsApp
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURI(message)}`;
+    window.open(whatsappURL, '_blank');
+  });
+});
+</script>
+
 </body>
 </html>
